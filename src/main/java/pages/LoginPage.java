@@ -2,8 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
@@ -22,13 +20,6 @@ public class LoginPage extends BasePage {
         driver.findElement(LOGIN_BUTTON).click();
     }
 
-    public void errorLogin(String username, String password) {
-        driver.findElement(USERNAME_INPUT).sendKeys(username);
-        driver.findElement(PASSWORD_INPUT).sendKeys(password);
-        driver.findElement(LOGIN_BUTTON).click();
-        driver.findElement(ERROR_BUTTON_TEXT).getText();
-    }
-
     public String getErrorText() {
         return driver.findElement(ERROR_BUTTON_TEXT).getText();
     }
@@ -37,6 +28,3 @@ public class LoginPage extends BasePage {
         driver.get("https://www.saucedemo.com/");
     }
 }
-
-
-

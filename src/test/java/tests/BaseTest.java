@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.CartPage;
 import pages.LoginPage;
+import pages.LoginPageFactoty;
 import pages.ProductsPage;
 
 import java.util.concurrent.TimeUnit;
@@ -16,6 +17,7 @@ public class BaseTest {
     LoginPage loginPage;
     ProductsPage productsPage;
     CartPage cartPage;
+    LoginPageFactoty loginPageFactoty;
 
     @BeforeMethod
     public void initTest() {
@@ -32,5 +34,4 @@ public class BaseTest {
     public void endTest() {
         driver.quit();
     }
-
 }
