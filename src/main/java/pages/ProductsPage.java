@@ -11,8 +11,9 @@ public class ProductsPage extends HeaderPage {
     public static final String ADD_TO_CART_OR_REMOVE_BUTTON = "//*[text() = '%s']/ancestor::*[@class = 'inventory_item']//button";
     public static final String BUTTONS_QUANTITY = "//*[@class = 'inventory_item']//button";
 
-    public void addProductToCart(String productName) {
+    public ProductsPage addProductToCart(String productName) {
         driver.findElement(By.xpath(String.format(ADD_TO_CART_OR_REMOVE_BUTTON, productName))).click();
+        return this;
 
     }
 

@@ -7,8 +7,9 @@ public class ProductsTest extends BaseTest {
 
     @Test
     public void checkAllButtonsAddToCart() {
-        loginPage.openPage();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage
+                .openPage()
+                .login("standard_user", "secret_sauce");
         Assert.assertTrue(productsPage.isButtonAddToCartOnScreen());
     }
 }

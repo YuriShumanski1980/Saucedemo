@@ -5,10 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.CartPage;
-import pages.LoginPage;
-import pages.LoginPageFactoty;
-import pages.ProductsPage;
+import pages.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,6 +14,7 @@ public class BaseTest {
     LoginPage loginPage;
     ProductsPage productsPage;
     CartPage cartPage;
+    CheckoutPage checkoutPage;
     LoginPageFactoty loginPageFactoty;
 
     @BeforeMethod
@@ -28,6 +26,7 @@ public class BaseTest {
         loginPage = new LoginPage(driver);
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
+        checkoutPage = new CheckoutPage(driver);
     }
 
     @AfterMethod
