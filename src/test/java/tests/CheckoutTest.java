@@ -16,10 +16,10 @@ public class CheckoutTest extends BaseTest {
         cartPage
                 .openPage();
         checkoutPage
-                .clickCheckoutButtonPage()
+                .clickCheckoutButton()
                 .inputCredsToFields("Yuri", "Protasov", "password")
-                .clickFinishButtonPage()
-                .checkFinishInscriptionPage()
+                .clickFinishButton()
+                .getFinishCheckoutMessageText()
                 .clickBackHomeButton();
         Assert.assertTrue(productsPage.isButtonAddToCartOnScreen());
     }

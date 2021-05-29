@@ -14,10 +14,10 @@ public class CheckoutPage extends BasePage {
     public static final By INPUT_CODE = By.xpath("//*[@id='postal-code']");
     public static final By CHECKOUT_CONTINUE_BUTTON = By.xpath("//*[@id='continue']");
     public static final By CHECKOUT_FINISH_BUTTON = By.xpath("//*[@id='finish']");
-    public static final By CHECKOUT_FINISH_PAGE = By.xpath("//*[contains(text(),'THANK YOU FOR YOUR ORDER')]");
+    public static final By CHECKOUT_FINISH_MESSAGE = By.xpath("//*[contains(text(),'THANK YOU FOR YOUR ORDER')]");
     public static final By CHECKOUT_BACK_HOME_BUTTON = By.xpath("//*[@id='back-to-products']");
 
-    public CheckoutPage clickCheckoutButtonPage() {
+    public CheckoutPage clickCheckoutButton() {
         driver.findElement(CHECKOUT_BUTTON).click();
         return this;
     }
@@ -30,13 +30,13 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
-    public CheckoutPage clickFinishButtonPage() {
+    public CheckoutPage clickFinishButton() {
         driver.findElement(CHECKOUT_FINISH_BUTTON).click();
         return this;
     }
 
-    public CheckoutPage checkFinishInscriptionPage() {
-        driver.findElement(CHECKOUT_FINISH_PAGE).getText();
+    public CheckoutPage getFinishCheckoutMessageText() {
+        driver.findElement(CHECKOUT_FINISH_MESSAGE).getText();
         return this;
     }
 
