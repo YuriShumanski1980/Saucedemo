@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class CheckoutTest extends BaseTest {
 
     @Test
-    public void buySelectedProducts() {
+    public void buySelectedProductsTest() {
         loginPage
                 .openPage()
                 .login("standard_user", "secret_sauce")
@@ -17,10 +17,12 @@ public class CheckoutTest extends BaseTest {
                 .openPage();
         checkoutPage
                 .clickCheckoutButton()
-                .inputCredsToFields("Yuri", "Protasov", "password")
+                .inputCredsToFields(System.getProperty("firstname"), System.getProperty("lastname"), System.getProperty("code"))
                 .clickFinishButton()
                 .getFinishCheckoutMessageText()
                 .clickBackHomeButton();
         Assert.assertTrue(productsPage.isButtonAddToCartOnScreen());
     }
 }
+//TODO firstname="Yuri", lastname="Protasov", code="password" - оставил для себя :)
+// mvn -Dtest=CheckoutTest -Dfirstname=Yuri -Dlastname=Protasov -Dcode=password test
