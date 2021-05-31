@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class CartTest extends BaseTest {
 
     @Test
-    public void addProductToCart() {
+    public void addProductToCartTest() {
         loginPage
                 .openPage()
                 .login("standard_user", "secret_sauce")
@@ -16,7 +16,7 @@ public class CartTest extends BaseTest {
     }
 
     @Test
-    public void productQuantityCart() {
+    public void productQuantityCartTest() {
         loginPage
                 .openPage()
                 .login("standard_user", "secret_sauce")

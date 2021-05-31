@@ -6,29 +6,50 @@
     <groupId>org.example</groupId>
     <artifactId>Saucedemo</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>6</source>
+                    <target>6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.vertion}</version>
+            </plugin>
+        </plugins>
+    </build>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <selenium-java.version>3.141.59</selenium-java.version>
+        <testng.vertion>7.1.0</testng.vertion>
+        <webdrivermanager.vertion>4.4.1</webdrivermanager.vertion>
+        <maven-surefire-plugin.vertion>3.0.0-M4</maven-surefire-plugin.vertion>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>${selenium-java.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.1.0</version>
+            <version>${testng.vertion}</version>
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>4.4.1</version>
+            <version>${webdrivermanager.vertion}</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -37,5 +58,4 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
 </project>

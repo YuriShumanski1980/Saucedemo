@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class LoginTest extends BaseTest {
 
     @Test
-    public void checkLoginAndPasswordZerro() {
+    public void checkLoginAndPasswordZerroTest() {
         loginPage
                 .openPage()
                 .login("yuri", "");
@@ -14,7 +14,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void checkLoginZerroAndPasswordZerro() {
+    public void checkLoginZerroAndPasswordZerroTest() {
         loginPage
                 .openPage()
                 .login("", "");
@@ -22,7 +22,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void checkLoginZerroAndPassword() {
+    public void checkLoginZerroAndPasswordTest() {
         loginPage
                 .openPage()
                 .login("", "1234567890");
@@ -30,7 +30,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void checkLoginAndPassword() {
+    public void checkLoginAndPasswordTest() {
         loginPage
                 .openPage()
                 .login("standard_user", "secret_sauce");
