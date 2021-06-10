@@ -89,11 +89,5 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.vertion}</version>
         </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.1.0</version>
-            <scope>compile</scope>
-        </dependency>
     </dependencies>
 </project>
