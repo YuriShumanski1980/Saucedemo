@@ -17,7 +17,7 @@ public class CheckoutTest extends BaseTest {
                 .openPage();
         checkoutPage
                 .clickCheckoutButton()
-                .inputCredsToFields(System.getProperty("firstname"), System.getProperty("lastname"), System.getProperty("code"))
+                .inputCredsToFields("Yuri", "Protasov", "code")
                 .clickFinishButton()
                 .getFinishCheckoutMessageText()
                 .clickBackHomeButton();
@@ -26,3 +26,4 @@ public class CheckoutTest extends BaseTest {
 }
 //TODO firstname="Yuri", lastname="Protasov", code="password" - оставил для себя :)
 // mvn -Dtest=CheckoutTest -Dfirstname=Yuri -Dlastname=Protasov -Dcode=password test
+// для запуска с помощью запроса ^ поменять в .inputCredsToFields - > ("Yuri", "Protasov", "code") на - > System.getProperty("firstname"), System.getProperty("lastname"), System.getProperty("code")
