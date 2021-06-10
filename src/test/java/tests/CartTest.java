@@ -9,7 +9,7 @@ public class CartTest extends BaseTest {
     public void addProductToCartTest() {
         loginPage
                 .openPage()
-                .login("standard_user", "secret_sauce")
+                .login(System.getenv("username"), System.getenv("password"))
                 .addProductToCart("Sauce Labs Onesie");
         cartPage.openPage();
         Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Onesie"), "$7.99");
@@ -25,3 +25,4 @@ public class CartTest extends BaseTest {
         Assert.assertEquals(cartPage.getProductQuantity("1"), "1");
     }
 }
+//"standard_user", "secret_sauce"
