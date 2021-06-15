@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.PropertyReader;
 
 public class CartTest extends BaseTest {
 
@@ -9,7 +10,8 @@ public class CartTest extends BaseTest {
     public void addProductToCartTest() {
         loginPage
                 .openPage()
-                .login(System.getenv("username"), System.getenv("password"))
+                .login(System.getenv().getOrDefault("username", PropertyReader.getProperty("username")),
+                        System.getenv().getOrDefault("password", PropertyReader.getProperty("password")))
                 .addProductToCart("Sauce Labs Onesie");
         cartPage.openPage();
         Assert.assertEquals(cartPage.getProductPrice("Sauce Labs Onesie"), "$7.99");
@@ -26,3 +28,5 @@ public class CartTest extends BaseTest {
     }
 }
 //"standard_user", "secret_sauce"
+//username="standard_user"
+//password="secret_sauce"
